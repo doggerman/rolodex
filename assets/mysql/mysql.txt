@@ -1,0 +1,57 @@
+
+CREATE DATABASE contacts;
+USE contacts;
+
+CREATE TABLE accounts (
+`handle` varchar(60) DEFAULT NULL,
+`socialMedia_id` int(11) NOT NULL,
+`people_id` int(11) NOT NULL,
+`profileUrl` varchar(80) DEFAULT NULL
+);
+
+
+CREATE TABLE gear (
+`id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`people_id` int(11) DEFAULT NULL,
+`make` varchar(50) DEFAULT NULL,
+`model` varchar(50) DEFAULT NULL,
+`typo` varchar(50) DEFAULT NULL
+);
+
+
+CREATE TABLE people (
+`id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`email` varchar(100) NOT NULL UNIQUE,
+`phone` varchar(15) DEFAULT NULL,
+`firstName` varchar(30) NOT NULL,
+`lastName` varchar(50) NOT NULL
+);
+
+INSERT INTO `people` (`email`, `phone`, `firstName`, `lastName`) VALUES
+('tobbe@gmail.com', '0551-5511', 'Tobias', 'Huff'),
+('matilda@gmail.com', '0551-53511', 'Matilda', 'Eriksson'),
+('mirjan@gmail.com', '0551-555432', 'Mirjan', 'Gustavsson'),
+('robin@yahoo.com', '0551-53511', 'Robin', 'Persson'),
+('putte@gmail.com', '0551-8884', 'Patrik', 'Moberg'),
+('robban@yahoo.com', '032-85515', 'Robert', 'Pull');
+
+
+CREATE TABLE socialmedia (
+`id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`ServiceName` varchar(50) DEFAULT NULL,
+`url` varchar(50) DEFAULT NULL
+);
+
+INSERT INTO `socialmedia` (`ServiceName`, `url`) VALUES
+('facebook', 'www.facebook.com'),
+('google plus', 'plus.google.com'),
+('pintrest', 'www.pintrest.com'),
+('twitter', 'www.twitter.com'),
+('github.com', 'www.github.com');
+
+
+
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost';
