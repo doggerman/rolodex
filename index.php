@@ -2,10 +2,6 @@
 <?php
 require'app/config.php';
 require'app/functions.php';
-
-
-// TODO:
-//Create a private repository (named rolodex) on github and add your code to that repository. Also create a database backup and add this to the repository under a directory called backups then invite me (Johannes) the the repository.
 ?>
 
 <html lang="en">
@@ -88,24 +84,12 @@ require'app/functions.php';
       <?php loopAtag($db, "SELECT id, email FROM people;", 'id', 'email');?>
     </div>
 
-      <table class="display">
-        <tr>
-          <th>Id</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Make</th>
-          <th>Model</th>
-          <th>Typo</th>
-          <th>Handle</th>
-          <th>ProfileUrl</th>
-        </tr>
           <?php
-          (!empty($_GET['id'])) ? $id = $_GET['id'] : $id = "";
-          loopDisplay($db, "SELECT people.*, gear.make, gear.model, gear.typo, accounts.handle, accounts.profileUrl FROM people LEFT JOIN gear ON people.id= gear.people_id LEFT JOIN accounts ON people.id = accounts.people_id WHERE people.id= '$id';");
-          ?>
-      </table>
+          if (!empty($_GET['id'])) {
+            $id = $_GET['id'];
+            loopDisplay($db, "SELECT people.*, gear.make, gear.model, gear.typo, accounts.handle, accounts.profileUrl FROM people LEFT JOIN gear ON people.id= gear.people_id LEFT JOIN accounts ON people.id = accounts.people_id WHERE people.id= '$id';");
+          }?>
+
 
     <?php require'redirect.php'; ?>
     <?php require'massageHandling.php' ?>

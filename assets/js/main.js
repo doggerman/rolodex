@@ -32,13 +32,13 @@ document.querySelector('#accounts').addEventListener('click', function(){
   document.querySelector('.hide-accounts').style.display = "block";
 });
 
+// console.log(document.querySelector('.users'));
+// console.log(document.querySelector('.display'));
+// document.querySelector('.users').addEventListener('click', function(){
+//   alert("teet");
+//   document.querySelector('.display').style.display = "block";
+// });
+
 document.querySelector('.close').addEventListener('click', function(){
   document.querySelector('.massage').style.display = "none";
 });
-
-
-
-
-// document.querySelector('.error').addEventListener('click', function(){
-//   // document.querySelector('.massage').style.display = "none";
-// });

@@ -34,6 +34,19 @@ return;
 }
 
 function loopDisplay($db, $query){
+    print '<table class="display">';
+    print '<th>Id</th>';
+    print '<th>Email</th>';
+    print '<th>Phone</th>';
+    print '<th>Firstname</th>';
+    print '<th>Lastname</th>';
+    print '<th>Make</th>';
+    print '<th>Model</th>';
+    print '<th>Typo</th>';
+    print '<th>Handle</th>';
+    print '<th>ProfileUrl</th>';
+    print '</tr>';
+
   foreach (selectMultiInDB($db, $query) as $result) {
     print '<tr>';
     print '<td>'.$result['id'].'</td>';
@@ -48,6 +61,7 @@ function loopDisplay($db, $query){
     print '<td>'.$result['profileUrl'].'</td>';
     print '</tr>';
   }
+    print '</table>';
 return;
 }
 
