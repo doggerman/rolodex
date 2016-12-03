@@ -15,7 +15,9 @@ require'app/functions.php';
 
 <header>
   <div class="header-logo">
-    <img src="../assets/img/logo.svg" alt="">
+    <a href="http://rolodex.dev/">
+      <img src="../assets/img/logo.svg" alt="">
+    </a>
   </div>
 </header>
 
