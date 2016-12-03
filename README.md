@@ -15,4 +15,4 @@ This project is written in html, css, php and javascript.
 The people in the database are fictional, and can therefore be used without permission.
 
 ##TODO
-This page is not complete, it still needs some css and javascript magic :)
+This page is not complete, it still needs some css and javascript magic :) But all the basic functions works.
